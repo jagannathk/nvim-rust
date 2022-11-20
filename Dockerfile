@@ -26,7 +26,7 @@ RUN apt-get update \
     && add-apt-repository -y ppa:neovim-ppa/unstable \
     # && apt-get install -y neovim 
     && git clone https://github.com/neovim/neovim \
-    && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && cd .. \
+    && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install && cd .. \
     && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' \
     && mkdir -p ~/.config/nvim/ \
